@@ -60,10 +60,18 @@ export default function App() {
               alt={selected.name}
               camera-controls
               auto-rotate
-              shadow-intensity="1"
               ar
+              shadow-intensity="1"
+              environment-image="/rooms/room.hdr"
+              skybox-image="/rooms/room.hdr"
+              skybox-height="1.5m"
+              poster={selected.image}
               style={{ width: "100%", height: "400px" }}
-            ></model-viewer>
+            >
+              <div slot="progress-bar" style={{ padding: 8 }}>
+                Loading 3D model...
+              </div>
+            </model-viewer>
             <button onClick={() => setSelected(null)}>Close</button>
           </div>
         </div>
