@@ -10,7 +10,7 @@ const products = [
     name: "Necklace (Zahra)",
     image: "/images/jw.webp",
     model: "/models/meshy_.glb",
-    fit: { widthCm: 15, anchor: [0.5, 0.8, 0.5] },
+    fit: { widthCm: 15, anchor: [0.5, 0.97, 0.5] },
   },
   // {
   //   id: 2,
