@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@google/model-viewer": "^4.4.0",
+    "@mediapipe/tasks-vision": "^0.10.14",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

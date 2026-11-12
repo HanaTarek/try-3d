@@ -1,12 +1,19 @@
 import { useState } from "react";
 import "@google/model-viewer";
+import TryOn from "./TryOn";
 
 const products = [
   {
     id: 1,
-    name: "My Chair",
-    image: "/images/chair.png",
-    model: "/models/3DModel.glb",
+    name: "Necklace (Zahra)",
+    image: "/images/jw.webp",
+    model: "/models/meshy_.glb",
+  },
+  {
+    id: 2,
+    name: "Necklace (Blender)",
+    image: "/images/jw.webp",
+    model: "/models/necklace.glb",
   },
 ];
 
@@ -27,6 +34,7 @@ const box = {
 
 export default function App() {
   const [selected, setSelected] = useState(null);
+  const [tryOn, setTryOn] = useState(null);
 
   return (
     <div style={{ padding: 20 }}>
@@ -72,10 +80,23 @@ export default function App() {
                 Loading 3D model...
               </div>
             </model-viewer>
-            <button onClick={() => setSelected(null)}>Close</button>
+
+            <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+              <button
+                onClick={() => {
+                  setTryOn(selected);
+                  setSelected(null);
+                }}
+              >
+                📷 Try it on
+              </button>
+              <button onClick={() => setSelected(null)}>Close</button>
+            </div>
           </div>
         </div>
       )}
+
+      {tryOn && <TryOn modelUrl={tryOn.model} onClose={() => setTryOn(null)} />}
     </div>
   );
 }
